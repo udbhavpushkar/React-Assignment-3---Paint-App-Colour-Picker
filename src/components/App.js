@@ -27,8 +27,7 @@ const App = () => {
   let [nextBackground, selectNextBackground] = useState({ background: "" })
 
   const applyColor = (updateSelectionStyle) => {
-    //updateSelectionStyle(nextBackground)
-      updateSelectionStyle.target.style.background = nextBackground
+    updateSelectionStyle(nextBackground)
   }
     return (
         <div id="master">

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "../styles/Child.css"
 
-const Selection = (props) => {
+const Selection = ({applyColor}) => {
+    const [currentColor, setCurrentColor] = useState({"background": ""});
+
+    const updateSelectionStyle = (nextBackground)=>{
+        setCurrentColor({"background": nextBackground.background});
+    }
 
     return (
-        <div id={props.key} onClick={props.applyColor} className="fix-box">
+        <div style={currentColor} className="fix-box" onClick={()=>applyColor(updateSelectionStyle)}>
             <h2 className="subheading">Selection </h2>
         </div>
     );
